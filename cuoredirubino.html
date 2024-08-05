@@ -1,32 +1,45 @@
 <!DOCTYPE html>
-<html lang="eg">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sapphire</title>
+    <title>Fiore Di Zaffiro</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .background-video {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform: translate(-50%, -50%);
             z-index: -1;
+        }
+
+        /* Make sure video covers entire viewport on mobile */
+        @media (max-width: 768px) {
+            .background-video {
+                object-fit: cover;
+            }
         }
     </style>
 </head>
 <body>
+
     <video class="background-video" autoplay muted loop>
         <source src="sapphire.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
 </body>
 </html>
